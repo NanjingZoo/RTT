@@ -6,10 +6,19 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Server" />
+        <module name="application" />
+        <module name="game-entities" />
+        <module name="gameEntities" />
+        <module name="gs-accessing-data-jpa" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="application" target="1.8" />
+      <module name="game-entities" target="1.8" />
+      <module name="gameEntities" target="1.8" />
+      <module name="gs-accessing-data-jpa" target="1.8" />
+      <module name="gs-accessing-data-jpa (1)" target="1.5" />
+      <module name="gs-accessing-data-jpa (2)" target="1.5" />
       <module name="Server" target="1.8" />
     </bytecodeTargetLevel>
   </component>
