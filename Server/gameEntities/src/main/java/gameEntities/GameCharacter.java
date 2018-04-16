@@ -9,54 +9,20 @@ import javax.persistence.Id;
 public class GameCharacter {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    private Long id;
-    private String characterName;
-    private int Strength;
-    private int Dexterity;
-    private int Constitution;
-    private int Intelligence;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    protected Long id;
+    protected long gameId;
+    protected GameCharacterAttributes gameCharacterAttributes;
+    protected MapLocation mapLocation;
 
-    protected GameCharacter() {}
-
-    public GameCharacter(String characterName, int strength, int dexterity, int constitution, int intelligence) {
-        this.characterName = characterName;
-        this.Strength = strength;
-        this.Dexterity = dexterity;
-        this.Constitution = constitution;
-        this.Intelligence = intelligence;
+    public GameCharacter() {
     }
 
-    public String GetCharacterName()
-    {
-        return characterName;
+    public GameCharacter(long gameId, GameCharacterAttributes gameCharacterAttributes, MapLocation mapLocation) {
+        this.gameId = gameId;
+        this.gameCharacterAttributes = gameCharacterAttributes;
+        this.mapLocation = mapLocation;
     }
 
-    public int GetStrength()
-    {
-        return Strength;
-    }
-
-    public int GetDexterity()
-    {
-        return Dexterity;
-    }
-
-    public int GetConstitution()
-    {
-        return Constitution;
-    }
-
-    public int GetIntelligence()
-    {
-        return Intelligence;
-    }
-
-    @Override
-    public String toString() {
-        return String.format(
-                "Character[id=%d, characterName='%s', strength='%d', dexterity='%d', constitution='%d', intelligence='%d']",
-                id, characterName, Strength, Dexterity, Constitution, Intelligence);
-    }
 
 }

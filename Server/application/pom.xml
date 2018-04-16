@@ -4,7 +4,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.springframework</groupId>
+    <groupId>com.nanjing.zoo</groupId>
     <artifactId>application</artifactId>
     <version>1.0</version>
 
@@ -19,19 +19,17 @@
             <groupId>com.nanjing.zoo</groupId>
             <artifactId>gameEntities</artifactId>
             <version>1.0</version>
-            <type>jar</type>
-            <scope>provided</scope>
         </dependency>
     </dependencies>
 
-    <build>
+<!--    <build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
-    </build>
+    </build>-->
 
 
 </project>

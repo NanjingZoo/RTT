@@ -1,15 +1,14 @@
-package  application;
+package gameEntities;
 
-/*import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;*/
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import java.util.Random;
 
 public class Battle {
 
-    /*private static final Logger log = LoggerFactory.getLogger(Application.class);*/
+    private static final Logger log = LoggerFactory.getLogger(Application.class);
 
-/*    public Character Begin(Character c1, Character c2) {
+    public Character Begin(Character c1, Character c2) {
 
         int hp1 = c1.GetConstitution() * 10;
         int hp2 = c2.GetConstitution() * 10;
@@ -40,6 +39,6 @@ public class Battle {
             return c2;
         }
 
-    }*/
+    }
 
 }
