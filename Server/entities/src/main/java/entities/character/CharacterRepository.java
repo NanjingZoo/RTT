@@ -1,4 +1,4 @@
-package gameEntities.character;
+package entities.character;
 
 import java.util.List;
 

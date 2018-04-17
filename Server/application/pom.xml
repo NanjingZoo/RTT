@@ -31,7 +31,7 @@
         </dependency>
         <dependency>
             <groupId>com.nanjingzoo</groupId>
-            <artifactId>gameEntities</artifactId>
+            <artifactId>entities</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>

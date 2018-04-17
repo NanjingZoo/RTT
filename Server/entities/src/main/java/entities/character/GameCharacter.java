@@ -1,7 +1,7 @@
-package gameEntities.character;
+package entities.character;
 
-import gameEntities.map.MapLocation;
-import gameEntities.tendency.MovementTendencyBase;
+import entities.map.MapLocation;
+import entities.tendency.MovementTendencyBase;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

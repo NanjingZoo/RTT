@@ -1,7 +1,7 @@
 package application;
 
-import gameEntities.character.Character;
-import gameEntities.character.CharacterRepository;
+import entities.character.Character;
+import entities.character.CharacterRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

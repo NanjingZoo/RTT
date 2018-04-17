@@ -4,7 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Server.iml" filepath="$PROJECT_DIR$/Server.iml" />
       <module fileurl="file://$PROJECT_DIR$/application/application.iml" filepath="$PROJECT_DIR$/application/application.iml" />
-      <module fileurl="file://$PROJECT_DIR$/gameEntities/gameEntities.iml" filepath="$PROJECT_DIR$/gameEntities/gameEntities.iml" />
+      <module fileurl="file://$PROJECT_DIR$/entities/gameEntities.iml" filepath="$PROJECT_DIR$/entities/gameEntities.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gameEntities/entities.iml" filepath="$PROJECT_DIR$/gameEntities/entities.iml" />
+      <module fileurl="file://$PROJECT_DIR$/simulator/simulator.iml" filepath="$PROJECT_DIR$/simulator/simulator.iml" />
     </modules>
   </component>
 </project>

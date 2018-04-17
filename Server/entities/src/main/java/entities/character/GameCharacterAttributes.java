@@ -1,4 +1,4 @@
-package gameEntities.character;
+package entities.character;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

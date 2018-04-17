@@ -1,4 +1,4 @@
-package gameEntities.tendency;
+package entities.tendency;
 
 import javax.persistence.Entity;
 

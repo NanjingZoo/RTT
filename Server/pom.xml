@@ -10,8 +10,9 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>gameEntities</module>
+        <module>entities</module>
         <module>application</module>
+        <module>simulator</module>
     </modules>
 
 
