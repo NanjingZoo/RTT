@@ -1,4 +1,4 @@
-package gameEntities.Maps;
+package gameEntities.map;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

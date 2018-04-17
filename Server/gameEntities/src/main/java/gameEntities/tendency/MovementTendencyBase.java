@@ -1,4 +1,4 @@
-package gameEntities.Behaviours;
+package gameEntities.tendency;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class MovementBehaviourBase {
+public class MovementTendencyBase {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -15,10 +15,10 @@ public class MovementBehaviourBase {
     protected boolean isPreferMelee;
     protected boolean isPreferStand;
 
-    public MovementBehaviourBase() {
+    public MovementTendencyBase() {
     }
 
-    public MovementBehaviourBase(String name, boolean isPreferMelee, boolean isPreferStand) {
+    public MovementTendencyBase(String name, boolean isPreferMelee, boolean isPreferStand) {
         this.name = name;
         this.isPreferMelee = isPreferMelee;
         this.isPreferStand = isPreferStand;

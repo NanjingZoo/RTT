@@ -1,4 +1,4 @@
-package gameEntities.Games;
+package gameEntities.game;
 
 import org.springframework.data.repository.CrudRepository;
 

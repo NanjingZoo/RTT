@@ -1,4 +1,4 @@
-package gameEntities.Characters;
+package gameEntities.character;
 
 import org.springframework.data.repository.CrudRepository;
 

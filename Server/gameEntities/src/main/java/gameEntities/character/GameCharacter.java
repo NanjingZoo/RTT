@@ -1,7 +1,7 @@
-package gameEntities.Characters;
+package gameEntities.character;
 
-import gameEntities.Maps.MapLocation;
-import gameEntities.Behaviours.MovementBehaviourBase;
+import gameEntities.map.MapLocation;
+import gameEntities.tendency.MovementTendencyBase;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,7 +17,7 @@ public class GameCharacter {
     protected long gameId;
     protected GameCharacterAttributes gameCharacterAttributes;
     protected MapLocation mapLocation;
-    protected MovementBehaviourBase movementBehaviourBase;
+    protected MovementTendencyBase movementTendencyBase;
 
     public GameCharacter() {
     }
@@ -25,11 +25,11 @@ public class GameCharacter {
     public GameCharacter(long gameId,
                          GameCharacterAttributes gameCharacterAttributes,
                          MapLocation mapLocation,
-                         MovementBehaviourBase movementBehaviourBase) {
+                         MovementTendencyBase movementTendencyBase) {
         this.gameId = gameId;
         this.gameCharacterAttributes = gameCharacterAttributes;
         this.mapLocation = mapLocation;
-        this.movementBehaviourBase = movementBehaviourBase;
+        this.movementTendencyBase = movementTendencyBase;
     }
 
 
