@@ -1,8 +1,6 @@
-package gameEntities;
+package gameEntities.Characters;
 
 import org.springframework.data.repository.CrudRepository;
-
-import java.util.List;
 
 public interface GameCharacterRepository extends CrudRepository<GameCharacter, Long> {
 

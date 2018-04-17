@@ -1,4 +1,7 @@
-package gameEntities;
+package gameEntities.Games;
+
+import gameEntities.Characters.GameCharacter;
+import gameEntities.Maps.Map;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

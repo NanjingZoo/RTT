@@ -19,7 +19,7 @@
       <module name="gs-accessing-data-jpa" target="1.8" />
       <module name="gs-accessing-data-jpa (1)" target="1.5" />
       <module name="gs-accessing-data-jpa (2)" target="1.5" />
-      <module name="Server" target="1.8" />
+      <module name="Server" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

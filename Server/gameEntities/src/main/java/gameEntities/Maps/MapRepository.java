@@ -1,4 +1,4 @@
-package gameEntities;
+package gameEntities.Maps;
 
 import org.springframework.data.repository.CrudRepository;
 

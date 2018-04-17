@@ -1,5 +1,7 @@
 package application;
 
+import gameEntities.Characters.Character;
+import gameEntities.Characters.CharacterRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -11,13 +13,13 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class Application {
 
-	/*private static final Logger log = LoggerFactory.getLogger(Application.class);*/
+	private static final Logger log = LoggerFactory.getLogger(Application.class);
 
 	public static void main(String[] args) {
-		/*SpringApplication.run(Application.class);*/
+		SpringApplication.run(Application.class);
 	}
 
-/*	@Bean
+	@Bean
 	public CommandLineRunner demo(CharacterRepository repository) {
 		return (args) -> {
 			// save a couple of customers
@@ -31,17 +33,6 @@ public class Application {
 			for (Character character : repository.findAll()) {
 				log.info(character.toString());
 			}
-			log.info("");
-
-			Character gc1 = repository.findById(1L).get();
-			Character gc2 = repository.findById(2L).get();
-			Character gc3 = repository.findById(3L).get();
-
-			Battle battle = new Battle();
-			Character winner1 = battle.Begin(gc1, gc2);
-			Character winner2 = battle.Begin(gc3, winner1);
-
-			log.info(String.format("%s is the winner!", winner2.GetCharacterName()));
 			log.info("");
 
 			// fetch an individual customer by ID
@@ -61,6 +52,6 @@ public class Application {
 			});
 			log.info("");
 		};
-	}*/
+	}
 
 }
