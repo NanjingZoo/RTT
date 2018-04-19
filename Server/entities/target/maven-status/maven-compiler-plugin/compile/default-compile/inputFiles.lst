@@ -1,2 +1,11 @@
-C:\Repositories\RTT\Server\gameEntities\src\main\java\gameEntities\CharacterRepository.java
-C:\Repositories\RTT\Server\gameEntities\src\main\java\gameEntities\GameCharacter.java
+C:\Repositories\RTT\Server\entities\src\main\java\entities\tendency\MovementTendencyBase.java
+C:\Repositories\RTT\Server\entities\src\main\java\entities\game\GameInstanceRepository.java
+C:\Repositories\RTT\Server\entities\src\main\java\entities\map\MapLocationRepository.java
+C:\Repositories\RTT\Server\entities\src\main\java\entities\tendency\MeleeMovementTendency.java
+C:\Repositories\RTT\Server\entities\src\main\java\entities\map\MapLocation.java
+C:\Repositories\RTT\Server\entities\src\main\java\entities\character\GameCharacterRepository.java
+C:\Repositories\RTT\Server\entities\src\main\java\entities\character\GameCharacterAttributes.java
+C:\Repositories\RTT\Server\entities\src\main\java\entities\character\GameCharacter.java
+C:\Repositories\RTT\Server\entities\src\main\java\entities\game\GameInstance.java
+C:\Repositories\RTT\Server\entities\src\main\java\entities\map\Map.java
+C:\Repositories\RTT\Server\entities\src\main\java\entities\map\MapRepository.java

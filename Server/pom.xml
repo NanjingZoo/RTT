@@ -12,7 +12,6 @@
     <modules>
         <module>entities</module>
         <module>application</module>
-        <module>simulator</module>
     </modules>
 
 

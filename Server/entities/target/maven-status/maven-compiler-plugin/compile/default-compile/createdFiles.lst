@@ -1,2 +1,11 @@
-gameEntities\CharacterRepository.class
-gameEntities\GameCharacter.class
+entities\game\GameInstance.class
+entities\character\GameCharacter.class
+entities\game\GameInstanceRepository.class
+entities\map\Map.class
+entities\character\GameCharacterAttributes.class
+entities\map\MapLocationRepository.class
+entities\character\GameCharacterRepository.class
+entities\tendency\MovementTendencyBase.class
+entities\map\MapLocation.class
+entities\tendency\MeleeMovementTendency.class
+entities\map\MapRepository.class
