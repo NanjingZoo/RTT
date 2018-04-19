@@ -1,0 +1,13 @@
+domain\character\GameCharacterAttributes.class
+domain\character\GameCharacterRepository.class
+domain\tendency\MeleeMovementTendency.class
+domain\character\CharacterRepository.class
+domain\map\MapLocationRepository.class
+domain\character\Character.class
+domain\game\GameInstance.class
+domain\map\MapLocation.class
+domain\map\Map.class
+domain\tendency\MovementTendencyBase.class
+domain\character\GameCharacter.class
+domain\map\MapRepository.class
+domain\game\GameInstanceRepository.class

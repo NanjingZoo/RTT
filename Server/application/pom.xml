@@ -30,7 +30,7 @@
         </dependency>
         <dependency>
             <groupId>com.nanjingzoo</groupId>
-            <artifactId>entity</artifactId>
+            <artifactId>domain</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>

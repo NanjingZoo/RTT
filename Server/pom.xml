@@ -11,7 +11,7 @@
 
     <modules>
         <module>application</module>
-        <module>entity</module>
+        <module>domain</module>
     </modules>
 
 

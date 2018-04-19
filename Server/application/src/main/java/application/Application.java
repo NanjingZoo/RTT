@@ -1,16 +1,20 @@
 package application;
 
-import entity.character.Character;
-import entity.character.CharacterRepository;
+import domain.character.Character;
+import domain.character.CharacterRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
+@EntityScan("domain.character")
+@EnableJpaRepositories("domain.character")
 public class Application {
 
 	private static final Logger log = LoggerFactory.getLogger(Application.class);
