@@ -10,8 +10,8 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>entities</module>
         <module>application</module>
+        <module>entity</module>
     </modules>
 
 

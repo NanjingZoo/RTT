@@ -8,14 +8,15 @@
         <outputRelativeToContentRoot value="true" />
         <module name="application" />
         <module name="entities" />
+        <module name="entity" />
         <module name="game-entities" />
-        <module name="gameEntities" />
         <module name="gs-accessing-data-jpa" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="application" target="1.8" />
       <module name="entities" target="1.8" />
+      <module name="entity" target="1.8" />
       <module name="game-entities" target="1.8" />
       <module name="gameEntities" target="1.8" />
       <module name="gs-accessing-data-jpa" target="1.8" />

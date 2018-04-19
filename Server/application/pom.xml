@@ -28,11 +28,11 @@
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
         </dependency>
-<!--        <dependency>
+        <dependency>
             <groupId>com.nanjingzoo</groupId>
-            <artifactId>entities</artifactId>
+            <artifactId>entity</artifactId>
             <version>${project.version}</version>
-        </dependency>-->
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
