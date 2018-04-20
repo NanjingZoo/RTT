@@ -11,6 +11,7 @@
         <module name="entities" />
         <module name="game-entities" />
         <module name="gs-accessing-data-jpa" />
+        <module name="service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -24,6 +25,7 @@
       <module name="gs-accessing-data-jpa (1)" target="1.5" />
       <module name="gs-accessing-data-jpa (2)" target="1.5" />
       <module name="Server" target="1.5" />
+      <module name="service" target="1.8" />
       <module name="simulator" target="1.5" />
     </bytecodeTargetLevel>
   </component>

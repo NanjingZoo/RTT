@@ -2,6 +2,9 @@ package application;
 
 import domain.character.Character;
 import domain.character.CharacterRepository;
+import domain.map.MapLocationRepository;
+import domain.map.MapRepository;
+import domain.tendency.TendencyRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -11,10 +14,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import service.Service;
 
 @SpringBootApplication
-@EntityScan("domain.character")
-@EnableJpaRepositories("domain.character")
+@EntityScan({"domain.character", "domain.map", "domain.tendency"})
+@EnableJpaRepositories({"domain.character", "domain.map", "domain.tendency"})
 public class Application {
 
 	private static final Logger log = LoggerFactory.getLogger(Application.class);
@@ -24,37 +28,16 @@ public class Application {
 	}
 
 	@Bean
-	public CommandLineRunner demo(CharacterRepository repository) {
+	public CommandLineRunner demo(CharacterRepository characterRepository,
+								  MapRepository mapRepository,
+								  MapLocationRepository mapLocationRepository,
+								  TendencyRepository tendencyRepository) {
 		return (args) -> {
-			// save a couple of customers
-			repository.save(new Character("Tortoise", 10,1,9,1));
-			repository.save(new Character("Monkey", 1,10,5,5));
-			repository.save(new Character("Ball", 5,1,5,10));
 
-			// fetch all customers
-			log.info("Character found with findAll():");
-			log.info("-------------------------------");
-			for (Character character : repository.findAll()) {
-				log.info(character.toString());
-			}
-			log.info("");
+			Service service = new Service(characterRepository, mapRepository, mapLocationRepository, tendencyRepository);
 
-			// fetch an individual customer by ID
-			repository.findById(1L)
-				.ifPresent(character -> {
-					log.info("Character found with findById(1L):");
-					log.info("--------------------------------");
-					log.info(character.toString());
-					log.info("");
-				});
+			service.Test();
 
-			// fetch customers by last name
-			log.info("Character found with findByCharacterName('Tortoise'):");
-			log.info("--------------------------------------------");
-			repository.findByCharacterName("Tortoise").forEach(tortoise -> {
-				log.info(tortoise.toString());
-			});
-			log.info("");
 		};
 	}
 

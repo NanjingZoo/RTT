@@ -1,8 +1,5 @@
 package domain.character;
 
-import domain.map.MapLocation;
-import domain.tendency.MovementTendencyBase;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,7 +14,7 @@ public class GameCharacter {
     private long gameId;
 /*    private GameCharacterAttributes gameCharacterAttributes;
     private MapLocation mapLocation;
-    private MovementTendencyBase movementTendencyBase;*/
+    private Tendency movementTendencyBase;*/
 
     public GameCharacter() {
     }
@@ -25,7 +22,7 @@ public class GameCharacter {
     public GameCharacter(long gameId/*,
                          GameCharacterAttributes gameCharacterAttributes,
                          MapLocation mapLocation,
-                         MovementTendencyBase movementTendencyBase*/) {
+                         Tendency movementTendencyBase*/) {
         this.gameId = gameId;
 /*        this.gameCharacterAttributes = gameCharacterAttributes;
         this.mapLocation = mapLocation;
