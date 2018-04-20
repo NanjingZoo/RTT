@@ -15,7 +15,7 @@ public class Tendency {
     private boolean isPreferMelee;
     private boolean isPreferStand;
 
-    public Tendency() {
+    protected Tendency() {
     }
 
     public Tendency(String name, boolean isPreferMelee, boolean isPreferStand) {
@@ -30,6 +30,13 @@ public class Tendency {
 
     public boolean isPreferStand() {
         return isPreferStand;
+    }
+
+    @Override
+    public String toString() {
+        return String.format(
+                "Tendency[id=%d, x='%s', y='%s']",
+                id, isPreferMelee, isPreferStand);
     }
 
 }

@@ -1,9 +1,10 @@
 package domain.character;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import domain.game.GameInstance;
+import domain.map.MapLocation;
+import domain.tendency.Tendency;
+
+import javax.persistence.*;
 
 @Entity
 public class GameCharacter {
@@ -11,23 +12,29 @@ public class GameCharacter {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private long gameId;
-/*    private GameCharacterAttributes gameCharacterAttributes;
+    @OneToOne
+    private GameCharacterAttributes gameCharacterAttributes;
+    @OneToOne
     private MapLocation mapLocation;
-    private Tendency movementTendencyBase;*/
+    @OneToOne
+    private Tendency tendency;
 
-    public GameCharacter() {
+    protected GameCharacter() {
     }
 
-    public GameCharacter(long gameId/*,
-                         GameCharacterAttributes gameCharacterAttributes,
+    public GameCharacter(GameCharacterAttributes gameCharacterAttributes,
                          MapLocation mapLocation,
-                         Tendency movementTendencyBase*/) {
-        this.gameId = gameId;
-/*        this.gameCharacterAttributes = gameCharacterAttributes;
+                         Tendency tendency) {
+        this.gameCharacterAttributes = gameCharacterAttributes;
         this.mapLocation = mapLocation;
-        this.movementTendencyBase = movementTendencyBase;*/
+        this.tendency = tendency;
     }
 
+    @Override
+    public String toString() {
+        return String.format(
+                "GameCharacter[id=%d, %s]",
+                id, gameCharacterAttributes.getCharacter().getCharacterName());
+    }
 
 }

@@ -28,7 +28,7 @@ public class Character {
         this.Intelligence = intelligence;
     }
 
-/*    public Long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -50,7 +50,7 @@ public class Character {
 
     public long getIntelligence() {
         return Intelligence;
-    }*/
+    }
 
     @Override
     public String toString() {

@@ -1,9 +1,6 @@
 package domain.character;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class GameCharacterAttributes {
@@ -11,7 +8,8 @@ public class GameCharacterAttributes {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private long characterId;
+    @OneToOne
+    private Character character;
     private long hitPoint;
     private long speed;
     private long attackPower;
@@ -23,28 +21,18 @@ public class GameCharacterAttributes {
     public GameCharacterAttributes() {
     }
 
-    public GameCharacterAttributes(long characterId, long hitPoint, long speed, long attackPower, long armor, long dodge, long spellPower, long spellResistance) {
-        this.hitPoint = hitPoint;
-        this.characterId = characterId;
-        this.speed = speed;
-        this.attackPower = attackPower;
-        this.armor = armor;
-        this.dodge = dodge;
-        this.spellPower = spellPower;
-        this.spellResistance = spellResistance;
+    public GameCharacterAttributes(Character character) {
+        this.character = character;
     }
 
-    public long getId() {
-        return id;
+    //region Getter
+
+    public Character getCharacter() {
+        return character;
     }
 
     public long getHitPoint() {
         return hitPoint;
-    }
-
-    public void setHitPoint(long hitPoint)
-    {
-        this.hitPoint = hitPoint;
     }
 
     public long getSpeed() {
@@ -70,4 +58,46 @@ public class GameCharacterAttributes {
     public long getSpellResistance() {
         return spellResistance;
     }
+
+    //endregion
+
+    //region Setter
+
+    public void setHitPoint(long hitPoint) {
+        this.hitPoint = hitPoint;
+    }
+
+    public void setSpeed(long speed) {
+        this.speed = speed;
+    }
+
+    public void setAttackPower(long attackPower) {
+        this.attackPower = attackPower;
+    }
+
+    public void setArmor(long armor) {
+        this.armor = armor;
+    }
+
+    public void setDodge(long dodge) {
+        this.dodge = dodge;
+    }
+
+    public void setSpellPower(long spellPower) {
+        this.spellPower = spellPower;
+    }
+
+    public void setSpellResistance(long spellResistance) {
+        this.spellResistance = spellResistance;
+    }
+
+    //endregion
+
+    @Override
+    public String toString() {
+        return String.format(
+                "CharacterAttributes[id=%d, hp='%d', speed='%d', ap='%d', armor='%d', dodge='%d', sp='%d', sr='%d']",
+                id, hitPoint, speed, attackPower, armor, dodge, spellPower, spellResistance);
+    }
+
 }

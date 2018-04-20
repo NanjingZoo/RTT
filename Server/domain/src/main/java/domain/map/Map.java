@@ -15,17 +15,13 @@ public class Map {
     private long xAxis;
     private long yAxis;
 
-    public Map() {
+    protected Map() {
     }
 
     public Map(String name, long xAxis, long yAxis) {
         this.name = name;
         this.xAxis = xAxis;
         this.yAxis = yAxis;
-    }
-
-    public long getId() {
-        return id;
     }
 
     public long getXAxis() {

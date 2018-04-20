@@ -1,13 +1,13 @@
 package service;
 
+import domain.character.*;
 import domain.character.Character;
-import domain.character.CharacterRepository;
-import domain.character.GameCharacterAttributesRepository;
-import domain.character.GameCharacterRepository;
 import domain.game.GameInstanceRepository;
 import domain.map.Map;
+import domain.map.MapLocation;
 import domain.map.MapLocationRepository;
 import domain.map.MapRepository;
+import domain.tendency.Tendency;
 import domain.tendency.TendencyRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,26 +25,69 @@ public class Service {
     private TendencyRepository tendencyRepository;
     private GameInstanceRepository gameInstanceRepository;
 
-    public Service(){
+    public Service() {
 
     }
 
     public Service(CharacterRepository characterRepository,
                    MapRepository mapRepository,
                    MapLocationRepository mapLocationRepository,
-                   TendencyRepository tendencyRepository){
+                   TendencyRepository tendencyRepository,
+                   GameCharacterAttributesRepository gameCharacterAttributesRepository,
+                   GameCharacterRepository gameCharacterRepository) {
         this.characterRepository = characterRepository;
         this.mapRepository = mapRepository;
         this.mapLocationRepository = mapLocationRepository;
         this.tendencyRepository = tendencyRepository;
+        this.gameCharacterAttributesRepository = gameCharacterAttributesRepository;
+        this.gameCharacterRepository = gameCharacterRepository;
     }
 
 
     public void Test() {
+
+        //Create entities
+        Character character1 = new Character("Tortoise", 10, 1, 9, 1);
+        Character character2 = new Character("Monkey", 1, 10, 5, 5);
+        Character character3 = new Character("Ball", 5, 1, 5, 10);
+
+        Map test_map = new Map("TestMap", 64, 64);
+
+        MapLocation mapLocation1 = new MapLocation(test_map, 1, 1);
+        MapLocation mapLocation2 = new MapLocation(test_map, 64,64);
+        MapLocation mapLocation3 = new MapLocation(test_map, 32,32);
+
+        Tendency melee_tendency = new Tendency("melee", true, false);
+        Tendency range_tendency = new Tendency("range", true, false);
+
+        EntityManager entityManager = new EntityManager();
+        GameCharacterAttributes gameCharacterAttributes1 = entityManager.CreateGameCharacterAttributes(character1);
+        GameCharacterAttributes gameCharacterAttributes2 = entityManager.CreateGameCharacterAttributes(character2);
+        GameCharacterAttributes gameCharacterAttributes3 = entityManager.CreateGameCharacterAttributes(character3);
+        GameCharacter gameCharacter1 = entityManager.CreateGameCharacter(gameCharacterAttributes1, mapLocation1, melee_tendency);
+        GameCharacter gameCharacter2 = entityManager.CreateGameCharacter(gameCharacterAttributes2, mapLocation2, melee_tendency);
+        GameCharacter gameCharacter3 = entityManager.CreateGameCharacter(gameCharacterAttributes3, mapLocation3, range_tendency);
+
         // save a couple of characters
-        SaveCharacter(new Character("Tortoise", 10, 1, 9, 1));
-        SaveCharacter(new Character("Monkey", 1, 10, 5, 5));
-        SaveCharacter(new Character("Ball", 5, 1, 5, 10));
+        SaveCharacter(character1);
+        SaveCharacter(character2);
+        SaveCharacter(character3);
+
+        SaveMap(test_map);
+        SaveMapLocation(mapLocation1);
+        SaveMapLocation(mapLocation2);
+        SaveMapLocation(mapLocation3);
+
+        SaveTendency(melee_tendency);
+        SaveTendency(range_tendency);
+
+        SaveGameCharacterAttributes(gameCharacterAttributes1);
+        SaveGameCharacterAttributes(gameCharacterAttributes2);
+        SaveGameCharacterAttributes(gameCharacterAttributes3);
+
+        SaveGameCharacter(gameCharacter1);
+        SaveGameCharacter(gameCharacter2);
+        SaveGameCharacter(gameCharacter3);
 
         // fetch all characters
         log.info("Character found with findAll():");
@@ -54,7 +97,28 @@ public class Service {
         }
         log.info("");
 
-        // fetch an individual character by ID
+        log.info("Map Location found with findAll():");
+        log.info("-------------------------------");
+        for(MapLocation mapLocation : mapLocationRepository.findAll()) {
+            log.info(mapLocation.toString());
+        }
+        log.info("");
+
+        log.info("Character Attributes found with findAll():");
+        log.info("-------------------------------");
+        for(GameCharacterAttributes gameCharacterAttributes : gameCharacterAttributesRepository.findAll()) {
+            log.info(gameCharacterAttributes.toString());
+        }
+        log.info("");
+
+        log.info("Game Character found with findAll():");
+        log.info("-------------------------------");
+        for(GameCharacter gameCharacter : gameCharacterRepository.findAll()) {
+            log.info(gameCharacter.toString());
+        }
+        log.info("");
+
+/*        // fetch an individual character by ID
         characterRepository.findById(1L)
                 .ifPresent(character -> {
                     log.info("Character found with findById(1L):");
@@ -69,16 +133,44 @@ public class Service {
         characterRepository.findByCharacterName("Tortoise").forEach(tortoise -> {
             log.info(tortoise.toString());
         });
-        log.info("");
+        log.info("");*/
     }
 
 
-    public void SaveCharacter(Character character){
+    public void SaveCharacter(Character character) {
         characterRepository.save(character);
     }
 
-    public void SaveMap(Map map){
+    public void SaveMap(Map map) {
         mapRepository.save(map);
+    }
+
+    public void SaveMapLocation(MapLocation mapLocation){
+        mapLocationRepository.save(mapLocation);
+    }
+
+    public void SaveTendency(Tendency tendency) {
+        tendencyRepository.save(tendency);
+    }
+
+    public void SaveGameCharacterAttributes(GameCharacterAttributes gameCharacterAttributes){
+        gameCharacterAttributesRepository.save(gameCharacterAttributes);
+    }
+
+    public void SaveGameCharacter(GameCharacter gameCharacter){
+        gameCharacterRepository.save(gameCharacter);
+    }
+
+    public Character LoadCharacter(long id)
+    {
+        Character character = characterRepository.findById(id).get();
+        return character;
+    }
+
+    public GameCharacter LoadGameCharacter(long id)
+    {
+        GameCharacter gameCharacter = gameCharacterRepository.findById(id).get();
+        return gameCharacter;
     }
 
 }

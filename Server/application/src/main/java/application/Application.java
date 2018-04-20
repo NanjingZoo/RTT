@@ -1,7 +1,7 @@
 package application;
 
+import domain.character.*;
 import domain.character.Character;
-import domain.character.CharacterRepository;
 import domain.map.MapLocationRepository;
 import domain.map.MapRepository;
 import domain.tendency.TendencyRepository;
@@ -31,10 +31,17 @@ public class Application {
 	public CommandLineRunner demo(CharacterRepository characterRepository,
 								  MapRepository mapRepository,
 								  MapLocationRepository mapLocationRepository,
-								  TendencyRepository tendencyRepository) {
+								  TendencyRepository tendencyRepository,
+								  GameCharacterAttributesRepository gameCharacterAttributesRepository,
+								  GameCharacterRepository gameCharacterRepository) {
 		return (args) -> {
 
-			Service service = new Service(characterRepository, mapRepository, mapLocationRepository, tendencyRepository);
+			Service service = new Service(characterRepository,
+					mapRepository,
+					mapLocationRepository,
+					tendencyRepository,
+					gameCharacterAttributesRepository,
+					gameCharacterRepository);
 
 			service.Test();
 

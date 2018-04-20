@@ -1,9 +1,8 @@
 package domain.map;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import domain.character.GameCharacter;
+
+import javax.persistence.*;
 
 @Entity
 public class MapLocation {
@@ -11,21 +10,24 @@ public class MapLocation {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private long mapId;
-    private long gameCharacterId;
+    @OneToOne
+    private Map map;
+    @OneToOne
+    private GameCharacter gameCharacter;
     private long xPosition;
     private long yPosition;
 
-    public MapLocation() {
+    protected MapLocation() {
     }
 
-    public MapLocation(long xPos, long yPos) {
+    public MapLocation(Map map, long xPos, long yPos) {
+        this.map = map;
         this.xPosition = xPos;
         this.yPosition = yPos;
     }
 
-    public long getId() {
-        return id;
+    public Map getMap() {
+        return map;
     }
 
     public long getXPosition() {
@@ -34,6 +36,13 @@ public class MapLocation {
 
     public long getYPosition() {
         return yPosition;
+    }
+
+    @Override
+    public String toString() {
+        return String.format(
+                "MapLocation[id=%d, x='%d', y='%d']",
+                id, xPosition, yPosition);
     }
 
 }
