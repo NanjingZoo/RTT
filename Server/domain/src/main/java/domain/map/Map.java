@@ -12,8 +12,9 @@ public class Map {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
-    private long xAxis;
-    private long yAxis;
+    //hexagonal grid map
+    private long xAxis; //Max x
+    private long yAxis; //Max y
 
     protected Map() {
     }
