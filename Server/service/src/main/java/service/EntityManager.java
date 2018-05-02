@@ -3,7 +3,7 @@ package service;
 import domain.character.Character;
 import domain.character.GameCharacter;
 import domain.character.GameCharacterAttributes;
-import domain.map.MapLocation;
+import domain.map.Location;
 import domain.tendency.Tendency;
 
 public class EntityManager {
@@ -25,9 +25,9 @@ public class EntityManager {
         return gameCharacterAttributes;
     }
 
-    public GameCharacter CreateGameCharacter(GameCharacterAttributes gameCharacterAttributes, MapLocation mapLocation, Tendency tendency) {
+    public GameCharacter CreateGameCharacter(GameCharacterAttributes gameCharacterAttributes, Location location, Tendency tendency) {
 
-        GameCharacter gameCharacter = new GameCharacter(gameCharacterAttributes, mapLocation, tendency);
+        GameCharacter gameCharacter = new GameCharacter(gameCharacterAttributes, location, tendency);
         return gameCharacter;
     }
 

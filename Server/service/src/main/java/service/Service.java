@@ -3,14 +3,17 @@ package service;
 import domain.character.*;
 import domain.character.Character;
 import domain.game.GameInstanceRepository;
+import domain.map.Location;
 import domain.map.Map;
-import domain.map.MapLocation;
 import domain.map.MapLocationRepository;
 import domain.map.MapRepository;
 import domain.tendency.Tendency;
 import domain.tendency.TendencyRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class Service {
@@ -53,9 +56,9 @@ public class Service {
 
         Map test_map = new Map("TestMap", 64, 64);
 
-        MapLocation mapLocation1 = new MapLocation(test_map, 1, 1);
-        MapLocation mapLocation2 = new MapLocation(test_map, 64,64);
-        MapLocation mapLocation3 = new MapLocation(test_map, 32,32);
+        Location location1 = new Location(test_map, 1, 1);
+        Location location2 = new Location(test_map, 64, 64);
+        Location location3 = new Location(test_map, 32, 32);
 
         Tendency melee_tendency = new Tendency("melee", true, false);
         Tendency range_tendency = new Tendency("range", true, false);
@@ -64,9 +67,9 @@ public class Service {
         GameCharacterAttributes gameCharacterAttributes1 = entityManager.CreateGameCharacterAttributes(character1);
         GameCharacterAttributes gameCharacterAttributes2 = entityManager.CreateGameCharacterAttributes(character2);
         GameCharacterAttributes gameCharacterAttributes3 = entityManager.CreateGameCharacterAttributes(character3);
-        GameCharacter gameCharacter1 = entityManager.CreateGameCharacter(gameCharacterAttributes1, mapLocation1, melee_tendency);
-        GameCharacter gameCharacter2 = entityManager.CreateGameCharacter(gameCharacterAttributes2, mapLocation2, melee_tendency);
-        GameCharacter gameCharacter3 = entityManager.CreateGameCharacter(gameCharacterAttributes3, mapLocation3, range_tendency);
+        GameCharacter gameCharacter1 = entityManager.CreateGameCharacter(gameCharacterAttributes1, location1, melee_tendency);
+        GameCharacter gameCharacter2 = entityManager.CreateGameCharacter(gameCharacterAttributes2, location2, melee_tendency);
+        GameCharacter gameCharacter3 = entityManager.CreateGameCharacter(gameCharacterAttributes3, location3, range_tendency);
 
         // save a couple of characters
         SaveCharacter(character1);
@@ -74,9 +77,9 @@ public class Service {
         SaveCharacter(character3);
 
         SaveMap(test_map);
-        SaveMapLocation(mapLocation1);
-        SaveMapLocation(mapLocation2);
-        SaveMapLocation(mapLocation3);
+        SaveMapLocation(location1);
+        SaveMapLocation(location2);
+        SaveMapLocation(location3);
 
         SaveTendency(melee_tendency);
         SaveTendency(range_tendency);
@@ -89,8 +92,10 @@ public class Service {
         SaveGameCharacter(gameCharacter2);
         SaveGameCharacter(gameCharacter3);
 
+        //Path finding test
+
         // fetch all characters
-        log.info("Character found with findAll():");
+/*        log.info("Character found with findAll():");
         log.info("-------------------------------");
         for (Character character : characterRepository.findAll()) {
             log.info(character.toString());
@@ -99,8 +104,8 @@ public class Service {
 
         log.info("Map Location found with findAll():");
         log.info("-------------------------------");
-        for(MapLocation mapLocation : mapLocationRepository.findAll()) {
-            log.info(mapLocation.toString());
+        for(Location location : mapLocationRepository.findAll()) {
+            log.info(location.toString());
         }
         log.info("");
 
@@ -116,7 +121,7 @@ public class Service {
         for(GameCharacter gameCharacter : gameCharacterRepository.findAll()) {
             log.info(gameCharacter.toString());
         }
-        log.info("");
+        log.info("");*/
 
 /*        // fetch an individual character by ID
         characterRepository.findById(1L)
@@ -136,7 +141,6 @@ public class Service {
         log.info("");*/
     }
 
-
     public void SaveCharacter(Character character) {
         characterRepository.save(character);
     }
@@ -145,8 +149,8 @@ public class Service {
         mapRepository.save(map);
     }
 
-    public void SaveMapLocation(MapLocation mapLocation){
-        mapLocationRepository.save(mapLocation);
+    public void SaveMapLocation(Location location){
+        mapLocationRepository.save(location);
     }
 
     public void SaveTendency(Tendency tendency) {

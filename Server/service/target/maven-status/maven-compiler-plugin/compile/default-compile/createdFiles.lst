@@ -1,3 +1,4 @@
-service\PathFinder.class
 service\EntityManager.class
 service\Service.class
+service\PathFinder.class
+service\Tile.class

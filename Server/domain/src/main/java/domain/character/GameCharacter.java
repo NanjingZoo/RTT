@@ -1,7 +1,6 @@
 package domain.character;
 
-import domain.game.GameInstance;
-import domain.map.MapLocation;
+import domain.map.Location;
 import domain.tendency.Tendency;
 
 import javax.persistence.*;
@@ -15,7 +14,7 @@ public class GameCharacter {
     @OneToOne
     private GameCharacterAttributes gameCharacterAttributes;
     @OneToOne
-    private MapLocation mapLocation;
+    private Location location;
     @OneToOne
     private Tendency tendency;
 
@@ -23,10 +22,10 @@ public class GameCharacter {
     }
 
     public GameCharacter(GameCharacterAttributes gameCharacterAttributes,
-                         MapLocation mapLocation,
+                         Location location,
                          Tendency tendency) {
         this.gameCharacterAttributes = gameCharacterAttributes;
-        this.mapLocation = mapLocation;
+        this.location = location;
         this.tendency = tendency;
     }
 

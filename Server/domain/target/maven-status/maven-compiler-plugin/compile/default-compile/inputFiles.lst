@@ -3,12 +3,12 @@ C:\Repositories\RTT\Server\domain\src\main\java\domain\character\CharacterReposi
 C:\Repositories\RTT\Server\domain\src\main\java\domain\map\MapLocationRepository.java
 C:\Repositories\RTT\Server\domain\src\main\java\domain\map\Map.java
 C:\Repositories\RTT\Server\domain\src\main\java\domain\character\Character.java
-C:\Repositories\RTT\Server\domain\src\main\java\domain\map\MapLocation.java
 C:\Repositories\RTT\Server\domain\src\main\java\domain\character\GameCharacterRepository.java
 C:\Repositories\RTT\Server\domain\src\main\java\domain\character\GameCharacterAttributesRepository.java
 C:\Repositories\RTT\Server\domain\src\main\java\domain\game\GameInstance.java
 C:\Repositories\RTT\Server\domain\src\main\java\domain\character\GameCharacterAttributes.java
 C:\Repositories\RTT\Server\domain\src\main\java\domain\tendency\TendencyRepository.java
 C:\Repositories\RTT\Server\domain\src\main\java\domain\tendency\Tendency.java
+C:\Repositories\RTT\Server\domain\src\main\java\domain\map\Location.java
 C:\Repositories\RTT\Server\domain\src\main\java\domain\map\MapRepository.java
 C:\Repositories\RTT\Server\domain\src\main\java\domain\game\GameInstanceRepository.java

@@ -1,49 +1,59 @@
 package service;
 
+import domain.map.Location;
 import domain.map.Map;
-import domain.map.MapLocation;
 
 import java.util.*;
 
 public class PathFinder {
 
     private Map map;
-    private MapLocation startLocation;
-    private MapLocation destLocation;
-    private List<MapLocation> pathLocations;
+    private Location startLocation;
+    private Location destLocation;
+    private List<Location> pathLocations;
+    private List<Location> closedList;
+    private List<Location> openList;
 
-    public PathFinder(Map map, MapLocation startLocation, MapLocation destLocation){
+    public PathFinder(){
+
+    }
+
+    public PathFinder(Map map, Location startLocation, Location destLocation) {
         this.map = map;
         this.startLocation = startLocation;
         this.destLocation = destLocation;
-        pathLocations = new ArrayList<MapLocation>();
+        pathLocations = new ArrayList<Location>();
         FindPath();
     }
 
-    public List<MapLocation> FindPath() {
-        long x_diff = destLocation.getXPosition() - startLocation.getXPosition();
-        long y_diff = destLocation.getYPosition() - startLocation.getYPosition();
-        List<MapLocation> path_locations = new ArrayList<MapLocation>();
+    public List<Location> FindPath() {
+        List<Location> path_locations = new ArrayList<Location>();
         return path_locations;
     }
 
-    public MapLocation Seek(MapLocation targetPosition){
-        MapLocation next_location = new MapLocation(map, 1, 1);
-        return next_location;
+    long GetFValue(Tile currentTile, Tile destTile) {
+        long g_value = GetGValue(currentTile, destTile);
+        long h_value = GetHValue(currentTile, destTile);
+        long f_value = g_value + h_value;
+        return f_value;
     }
 
-    public MapLocation Pursuit(MapLocation targetPosition){
-        MapLocation next_location = new MapLocation(map, 1, 1);
-        return next_location;
+    long GetGValue(Tile currentTile, Tile destTile) {
+        return currentTile.gValue;
     }
 
-    public MapLocation Evading(MapLocation targetPosition){
-        MapLocation next_location = new MapLocation(map, 1, 1);
-        return next_location;
+    long GetHValue(Tile currentTile, Tile destTile) {
+        long x_diff = Math.abs(destTile.location.getXPosition() - currentTile.location.getXPosition());
+        long y_diff = Math.abs(destTile.location.getYPosition() - currentTile.location.getYPosition());
+        return x_diff + y_diff;
     }
 
-    public void test(){
-        System.out.println("This is a test.");
+    void GetAdjacentTiles(List<Tile> allTiles) {
+
+    }
+
+    void GetWalkableTiles(List<Tile> allTiles) {
+
     }
 
 }

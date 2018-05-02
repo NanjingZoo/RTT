@@ -6,8 +6,8 @@ domain\map\MapLocationRepository.class
 domain\tendency\Tendency.class
 domain\character\Character.class
 domain\game\GameInstance.class
-domain\map\MapLocation.class
 domain\map\Map.class
+domain\map\Location.class
 domain\character\GameCharacter.class
 domain\character\GameCharacterAttributesRepository.class
 domain\map\MapRepository.class
